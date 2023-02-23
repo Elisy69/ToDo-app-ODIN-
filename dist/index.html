@@ -5,11 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo App</title>
-    <script defer src="main.js"></script>
-  </head>
+  <script defer src="main.js"></script></head>
   <body>
-    <div class="hey">ss</div>
-    <div>sd</div>
-    <div class="sa">asd</div>
+    <div id="appWindow" class="appWindow">
+      <header></header>
+      <div id="content" class="content">
+        <ul class="menuBar">
+          <button id="addNewProjectt" class="addNewProject">
+            <svg
+              id="plusIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+            </svg>
+            <span class="addProjectText">New Project</span>
+          </button>
+        </ul>
+        <div class="tasks"></div>
+      </div>
+      <footer></footer>
+    </div>
   </body>
 </html>

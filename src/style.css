@@ -30,15 +30,215 @@ header {
   height: 100%;
   background-color: rgba(88, 88, 88, 0.096);
   border-right: 1px solid rgba(172, 172, 172, 0.161);
+  padding: 10px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.addNewProject {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.addNewProject:hover {
+  background-color: aliceblue;
+}
+
+#plusIcon {
+  width: 20px;
+  height: 20px;
+  fill: gray;
+}
+
+.addProjectText {
+  padding-top: 3px;
+  font-size: 0.94rem;
+}
+
+li {
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+li:hover {
+  background-color: aliceblue;
 }
 
 .tasks {
   width: 80%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 footer {
   width: 100%;
   height: 4%;
   border-top: 1px solid rgba(172, 172, 172, 0.437);
+}
+
+.projectTitle {
+  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.projectDescription {
+  width: 100%;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.border {
+  width: 80%;
+  border-bottom: 1px solid rgba(130, 130, 130, 0.241);
+  align-self: center;
+}
+
+.addTaskBtn {
+  height: 25px;
+  width: 25px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.addTaskBtn:hover {
+  border-radius: 1rem;
+  background-color: rgba(175, 175, 176, 0.339);
+}
+
+.popup {
+  position: fixed;
+  transition: 200ms ease-in-out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border: 5px double rgb(99, 99, 99);
+  background-color: rgb(232, 232, 232);
+  border-radius: 5px;
+  z-index: 10;
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+  position: fixed;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.447);
+  pointer-events: none;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.taskAddText {
+  all: unset;
+  align-self: center;
+  margin-top: 10px;
+  width: 300px;
+  height: 50px;
+}
+
+.reminder {
+  display: flex;
+  flex-direction: column;
+}
+
+.type {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleForm {
+  all: unset;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px;
+  width: 400px;
+  height: 50px;
+}
+.descriptionForm {
+  all: unset;
+  padding: 10px;
+}
+
+.submitProjectBtn {
+  width: 100px;
+  height: 30px;
+  font-size: 0.88rem;
+  align-self: center;
+}
+
+.exitPopUp {
+  position: absolute;
+  top: 2%;
+  left: 88%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.6rem;
+  padding-left: 0.3rem;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 2rem;
+}
+.checkbox {
+  margin-right: 5px;
+}
+.todoText {
+  width: 160px;
+  height: 25px;
+  overflow: hidden;
+  padding-left: 5px;
+}
+.todoType {
+}
+.todoDate {
+  width: 120px;
+  height: 20px;
+  border: 1px solid red;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  background-color: rgba(255, 0, 0, 0.577);
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.todoDate:hover {
+  background-color: rgba(255, 0, 0, 0.354);
+  border: 1px solid rgba(255, 0, 0, 0.37);
+}
+.todoDelete {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.todoDelete:hover {
+  cursor: pointer;
+}
+.todoDelete:active {
+  color: red;
 }

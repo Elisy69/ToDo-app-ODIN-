@@ -1,5 +1,7 @@
-export const projectFactory = (title, description, toDoList) => {
-  return { title, description, toDoList };
+export const projectFactory = (title, description) => {
+  const todos = [];
+
+  return { title, description, todos };
 };
 
 export const toDoFactory = (description, dateToRemind, type, checkList) => {
