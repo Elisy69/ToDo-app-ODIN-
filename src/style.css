@@ -35,6 +35,20 @@ header {
   flex-direction: column;
 }
 
+.project {
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+.project:hover {
+  background-color: aliceblue;
+}
+.project:active {
+  background-color: rgb(225, 238, 249);
+}
+.selected {
+  background-color: aliceblue;
+}
+
 .addNewProject {
   all: unset;
   display: flex;
@@ -59,11 +73,6 @@ header {
 }
 
 li {
-  padding: 5px 10px 5px 10px;
-  cursor: pointer;
-}
-li:hover {
-  background-color: aliceblue;
 }
 
 .tasks {

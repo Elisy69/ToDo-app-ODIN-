@@ -1,16 +1,20 @@
 import { createElement } from "./createElem";
-import { projectFactory } from "./factories";
+import { selectProject } from "./slectProject";
 import { UI } from "./UI";
 import PlusIcon from "./plus2.svg";
 
-export const projectLoad = (project) => {
-  UI.PROJECTMENU = createElement({
-    element: "li",
-    insertionMethod: "prepend",
-    domLocation: UI.MENUBAR,
-    whatClass: "project",
-    text: project.title,
-  });
+export const projectLoad = (project, isItSelector) => {
+  if (isItSelector !== true) {
+    UI.PROJECTMENU = createElement({
+      element: "li",
+      insertionMethod: "prepend",
+      domLocation: UI.MENUBAR,
+      whatClass: "project",
+      text: project.title,
+    });
+    UI.PROJECTMENU.addEventListener("click", selectProject);
+  } else {
+  }
 
   UI.PROJECTTITLE = createElement({
     element: "h2",
