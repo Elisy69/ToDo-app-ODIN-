@@ -1,3 +1,4 @@
+import { projects } from ".";
 import { createElement } from "./createElem";
 import { UI } from "./UI";
 
@@ -48,5 +49,16 @@ export function createTask(task) {
     domLocation: UI.TODO,
     whatClass: "todoDelete",
     text: "✕",
+  });
+
+  UI.TODO.DELETE.addEventListener("click", (task) => {
+    let currentProject = projects.find(
+      (el) => el.title === UI.PROJECTTITLE.textContent
+    );
+    let index = currentProject.todos.findIndex(
+      (item) => item.description === task.target.parentElement.id
+    );
+    currentProject.todos.splice(index, 1);
+    task.target.parentElement.remove();
   });
 }

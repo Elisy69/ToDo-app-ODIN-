@@ -4,6 +4,7 @@ import { popupOn, popupOff } from "./popup";
 import { projects } from "./index";
 import { createTask } from "./createTask";
 import { format } from "date-fns";
+import { storeProjects } from "./storage_and_JSON";
 
 export function addTaskHandler() {
   UI.ADDTASK.addEventListener("click", () => {
@@ -34,15 +35,8 @@ export function addTaskHandler() {
       currentTask.type = UI.TYPESELECT.value;
       createTask(currentTask);
       popupOff();
+      storeProjects(projects);
       UI.TASKTEXT.value = "";
-      UI.TODO.DELETE.addEventListener("click", (task) => {
-        let index = currentProject.todos.findIndex(
-          (item) => item.description === task.target.parentElement.id
-        );
-        currentProject.todos.splice(index, 1);
-        task.target.parentElement.remove();
-        console.log(projects);
-      });
     }
   });
 }

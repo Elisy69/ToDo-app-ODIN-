@@ -3,9 +3,9 @@ import { projectFactory } from "./factories";
 import { UI } from "./UI";
 import PlusIcon from "./plus2.svg";
 import { projectLoad } from "./projectLoad";
-import { projects } from "./index";
+import { projects } from ".";
 
-export const defaultLoad = () => {
+export const defaultLoad = (projects) => {
   console.log("Page loading...");
 
   const firstProject = projectFactory(
@@ -14,6 +14,5 @@ export const defaultLoad = () => {
   );
 
   projectLoad(firstProject);
-
   projects.push(firstProject);
 };

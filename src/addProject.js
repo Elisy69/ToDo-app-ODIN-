@@ -1,4 +1,4 @@
-import { toDoFactory, projectFactory } from "./factories";
+import { projectFactory } from "./factories";
 import { createPopUp } from "./popup";
 import { UI } from "./UI";
 import { createElement } from "./createElem";
@@ -6,6 +6,7 @@ import { projects } from "./index";
 import { cleanProjectWindow } from "./cleanProjectWindow";
 import { projectLoad } from "./projectLoad";
 import { addTaskHandler } from "./taskHandler";
+import { storeProjects } from "./storage_and_JSON";
 
 export function addProjectHandler() {
   UI.ADDPROJECT.addEventListener("click", () => {
@@ -22,6 +23,7 @@ export function addProjectHandler() {
       projectLoad(project);
       createPopUp();
       addTaskHandler();
+      storeProjects(projects);
     });
   });
 }
